@@ -1,7 +1,6 @@
 package com.arthurrocha01.api_java.infra.jpa.entity;
 
 import java.math.BigDecimal;
-import java.util.UUID;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -16,12 +15,12 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class ItemEntity {
 	@Id
-	@GeneratedValue(strategy = GenerationType.UUID)
-	private UUID id;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 	private String description;
 	private BigDecimal price;
 	
-	public UUID getId() { return this.id; }
+	public Long getId() { return this.id; }
 	public String getDescription() { return this.description; }
 	public BigDecimal getPrice() { return this.price; }
 }

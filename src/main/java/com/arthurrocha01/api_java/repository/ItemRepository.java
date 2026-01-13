@@ -1,9 +1,10 @@
 package com.arthurrocha01.api_java.repository;
 
-import java.util.List;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 import com.arthurrocha01.api_java.model.Item;
 
 public interface ItemRepository {
-	List<Item> findAll();
+	Page<Item> findAll( Pageable pageable);
 }

@@ -1,9 +1,10 @@
 package com.arthurrocha01.api_java.controller;
 
-import java.util.List;
-
+import org.springframework.data.domain.Page;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.arthurrocha01.api_java.model.Item;
@@ -20,7 +21,11 @@ public class ItemController {
 	}
 	
 	@GetMapping
-	public List<Item> list() {
-		return this.service.listItems();
+	public ResponseEntity<Page<Item>> list(
+		@RequestParam(defaultValue = "0") int page,
+		@RequestParam(defaultValue = "10") int size
+	) {
+		Page<Item> list = this.service.listItems(page, size);
+		return ResponseEntity.ok(list);
 	}
 }
