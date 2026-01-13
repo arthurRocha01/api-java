@@ -18,10 +18,10 @@ public class ItemEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.UUID)
 	private UUID id;
-	private String descrition;
+	private String description;
 	private BigDecimal price;
 	
 	public UUID getId() { return this.id; }
-	public String getDescription() { return this.descrition; }
+	public String getDescription() { return this.description; }
 	public BigDecimal getPrice() { return this.price; }
 }
