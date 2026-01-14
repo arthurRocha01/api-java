@@ -1,0 +1,8 @@
+/home/nmqvl/code/api-java/src/main/java/com/arthurrocha01/api_java/ApiJavaApplication.java
+/home/nmqvl/code/api-java/src/main/java/com/arthurrocha01/api_java/controller/ItemController.java
+/home/nmqvl/code/api-java/src/main/java/com/arthurrocha01/api_java/infra/jpa/JPAItemRepository.java
+/home/nmqvl/code/api-java/src/main/java/com/arthurrocha01/api_java/infra/jpa/SpringItemJPARepository.java
+/home/nmqvl/code/api-java/src/main/java/com/arthurrocha01/api_java/infra/jpa/entity/ItemEntity.java
+/home/nmqvl/code/api-java/src/main/java/com/arthurrocha01/api_java/model/Item.java
+/home/nmqvl/code/api-java/src/main/java/com/arthurrocha01/api_java/repository/ItemRepository.java
+/home/nmqvl/code/api-java/src/main/java/com/arthurrocha01/api_java/service/ItemService.java

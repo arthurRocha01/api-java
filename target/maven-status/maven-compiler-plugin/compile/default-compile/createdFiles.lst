@@ -1,0 +1,8 @@
+com/arthurrocha01/api_java/infra/jpa/SpringItemJPARepository.class
+com/arthurrocha01/api_java/infra/jpa/JPAItemRepository.class
+com/arthurrocha01/api_java/repository/ItemRepository.class
+com/arthurrocha01/api_java/infra/jpa/entity/ItemEntity.class
+com/arthurrocha01/api_java/service/ItemService.class
+com/arthurrocha01/api_java/controller/ItemController.class
+com/arthurrocha01/api_java/ApiJavaApplication.class
+com/arthurrocha01/api_java/model/Item.class
