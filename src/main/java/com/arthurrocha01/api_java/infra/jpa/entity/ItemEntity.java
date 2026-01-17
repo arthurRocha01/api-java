@@ -2,6 +2,8 @@ package com.arthurrocha01.api_java.infra.jpa.entity;
 
 import java.math.BigDecimal;
 
+import com.arthurrocha01.api_java.model.Item;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -19,6 +21,10 @@ public class ItemEntity {
 	private Long id;
 	private String description;
 	private BigDecimal price;
+
+	public Item toModel() {
+		return new Item(id, description, price);
+	}
 	
 	public Long getId() { return this.id; }
 	public String getDescription() { return this.description; }

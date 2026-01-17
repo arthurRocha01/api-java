@@ -21,4 +21,8 @@ public class ItemService {
 		PageRequest pageRequest = PageRequest.of(page, size, Sort.by("description").ascending());
 		return this.repository.findAll(pageRequest);
 	}
+
+	public Item getItemById(Long id) {
+		return this.repository.findById(id);
+	}
 }
