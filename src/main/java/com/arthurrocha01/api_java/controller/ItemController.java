@@ -31,10 +31,9 @@ public class ItemController {
 	}
 
 	@GetMapping("/{id}")
-	public String getItemById(@PathVariable Long id) {
-		return "Not implemented yet";
-		// return ResponseEntity.ok(
-		// 	this.service.getItemById(id)
-		// );
+	public ResponseEntity<Item> getItemById(@PathVariable Long id) {
+		return ResponseEntity.ok(
+			this.service.getItemById(id)
+		);
 	}
 }
