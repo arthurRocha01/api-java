@@ -21,8 +21,7 @@ public class JPAItemRepository implements ItemRepository{
 	@Override
 	public Page<Item> findAll(Pageable pageable) {
 		Objects.requireNonNull(pageable, "O parâmetro pageable não pode ser nulo");
-		Page<ItemEntity> entities = this.jpa.findAll(pageable);
-		return entities.map(ItemEntity::toModel);
+		return jpa.findAll(pageable).map(ItemEntity::toModel);
 	}
 
 	@Override

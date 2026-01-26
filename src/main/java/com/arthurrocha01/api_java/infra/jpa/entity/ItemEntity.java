@@ -2,8 +2,6 @@ package com.arthurrocha01.api_java.infra.jpa.entity;
 
 import java.math.BigDecimal;
 
-import org.hibernate.annotations.ManyToAny;
-
 import com.arthurrocha01.api_java.model.Item;
 
 import jakarta.persistence.Entity;
@@ -12,6 +10,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
@@ -26,8 +25,8 @@ public class ItemEntity {
 	private String description;
 	private BigDecimal price;
 
-	@ManyToAny(fetch = FetchType.LAZY)
-	@JoinColumn(name = "category__id")
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "id_category")
 	private CategoryEntity category;
 
 	public Item toModel() {
