@@ -2,7 +2,7 @@ package com.arthurrocha01.api_java.infra.jpa.entity;
 
 import java.math.BigDecimal;
 
-import com.arthurrocha01.api_java.model.Item;
+import com.arthurrocha01.api_java.domain.Item;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;

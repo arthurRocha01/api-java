@@ -6,8 +6,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Repository;
 
+import com.arthurrocha01.api_java.domain.Item;
 import com.arthurrocha01.api_java.infra.jpa.entity.ItemEntity;
-import com.arthurrocha01.api_java.model.Item;
 import com.arthurrocha01.api_java.repository.ItemRepository;
 
 @Repository

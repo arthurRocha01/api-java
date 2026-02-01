@@ -11,10 +11,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.arthurrocha01.api_java.application.ItemService;
 import com.arthurrocha01.api_java.controller.dto.request.PatchItemRequest;
 import com.arthurrocha01.api_java.controller.dto.request.UpdateItemRequest;
-import com.arthurrocha01.api_java.model.Item;
-import com.arthurrocha01.api_java.service.ItemService;
+import com.arthurrocha01.api_java.domain.Item;
 
 @RestController
 @RequestMapping("/items")

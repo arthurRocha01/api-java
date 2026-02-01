@@ -1,14 +1,14 @@
-package com.arthurrocha01.api_java.service;
+package com.arthurrocha01.api_java.application;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
-import com.arthurrocha01.api_java.model.Item;
+import com.arthurrocha01.api_java.application.command.PatchItemCommand;
+import com.arthurrocha01.api_java.application.command.UpdateItemComand;
+import com.arthurrocha01.api_java.domain.Item;
 import com.arthurrocha01.api_java.repository.ItemRepository;
-import com.arthurrocha01.api_java.service.command.PatchItemCommand;
-import com.arthurrocha01.api_java.service.command.UpdateItemComand;
 
 import jakarta.transaction.Transactional;
 

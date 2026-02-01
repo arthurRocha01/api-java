@@ -1,4 +1,4 @@
-package com.arthurrocha01.api_java.model;
+package com.arthurrocha01.api_java.domain;
 
 public class Category {
     private final Long id;

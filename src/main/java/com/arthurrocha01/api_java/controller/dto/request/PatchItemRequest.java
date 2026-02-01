@@ -3,7 +3,7 @@ package com.arthurrocha01.api_java.controller.dto.request;
 import java.math.BigDecimal;
 import java.util.Optional;
 
-import com.arthurrocha01.api_java.service.command.PatchItemCommand;
+import com.arthurrocha01.api_java.application.command.PatchItemCommand;
 
 public record PatchItemRequest(
     Long id,

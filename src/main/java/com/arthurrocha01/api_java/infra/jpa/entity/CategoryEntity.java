@@ -1,6 +1,6 @@
 package com.arthurrocha01.api_java.infra.jpa.entity;
 
-import com.arthurrocha01.api_java.model.Category;
+import com.arthurrocha01.api_java.domain.Category;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

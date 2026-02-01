@@ -10,7 +10,8 @@ Content-Type: application/json
 
 {
   "description": "ainda só troca o price!!!!",
-  "price": 6999
+  "price": 6999,
+  "categoryId": 1
 }
 
 ###

@@ -1,4 +1,4 @@
-package com.arthurrocha01.api_java.service.command;
+package com.arthurrocha01.api_java.application.command;
 
 import java.math.BigDecimal;
 
