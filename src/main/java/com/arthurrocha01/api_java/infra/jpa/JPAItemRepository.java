@@ -21,7 +21,7 @@ public class JPAItemRepository implements ItemRepository{
 	@Override
 	public Page<Item> findAll(Pageable pageable) {
 		Objects.requireNonNull(pageable, "O parâmetro pageable não pode ser nulo");
-		return jpa.findAll(pageable).map(ItemEntity::toModel);
+		return jpa.findAll(pageable).map(ItemEntity::toDomain);
 	}
 
 	@Override
@@ -32,6 +32,14 @@ public class JPAItemRepository implements ItemRepository{
 		if (entity == null) {
 			return null;
 		}
-		return entity.toModel();
+		return entity.toDomain();
+	}
+
+	@Override
+	public Item save(Item item) {
+		ItemEntity entity = ItemEntity.fromDomain(item);
+		ItemEntity saved = this.jpa.save(Objects.requireNonNull(entity));
+
+		return saved.toDomain();
 	}
 }

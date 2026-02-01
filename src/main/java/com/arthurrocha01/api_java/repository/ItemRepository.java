@@ -8,4 +8,5 @@ import com.arthurrocha01.api_java.model.Item;
 public interface ItemRepository {
 	Page<Item> findAll( Pageable pageable);
 	Item findById(Long id);
+	Item save(Item item);
 }

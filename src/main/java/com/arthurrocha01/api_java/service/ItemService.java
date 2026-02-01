@@ -7,6 +7,10 @@ import org.springframework.stereotype.Service;
 
 import com.arthurrocha01.api_java.model.Item;
 import com.arthurrocha01.api_java.repository.ItemRepository;
+import com.arthurrocha01.api_java.service.command.PatchItemCommand;
+import com.arthurrocha01.api_java.service.command.UpdateItemComand;
+
+import jakarta.transaction.Transactional;
 
 @Service
 public class ItemService {
@@ -24,5 +28,23 @@ public class ItemService {
 
 	public Item getItemById(Long id) {
 		return this.repository.findById(id);
+	}
+
+	@Transactional
+	public Item updateItem(Long id, UpdateItemComand cmd) {
+		Item item = this.repository.findById(id);
+
+		item.changePrice(cmd.price());
+
+		return this.repository.save(item);
+	}
+
+	@Transactional
+	public void patchItem(Long id, PatchItemCommand cmd) {
+		Item item = this.repository.findById(id);
+
+		cmd.price().ifPresent(item::changePrice);
+
+		this.repository.save(item);
 	}
 }

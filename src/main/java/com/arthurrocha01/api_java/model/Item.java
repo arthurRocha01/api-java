@@ -3,16 +3,20 @@ package com.arthurrocha01.api_java.model;
 import java.math.BigDecimal;
 
 public class Item {
-	private final Long id;
-	private final String description;
-	private final BigDecimal price;
-	private final Category category;
+	private Long id;
+	private String description;
+	private BigDecimal price;
+	private Category category;
 	
 	public Item(Long id, String description, BigDecimal price, Category category) {
 		this.id = id;
 		this.description = description;
 		this.price = price;
 		this.category = category;
+	}
+
+	public void changePrice(BigDecimal newPrice) {
+		this.price = newPrice;
 	}
 
 	public Long getId() { return this.id; }

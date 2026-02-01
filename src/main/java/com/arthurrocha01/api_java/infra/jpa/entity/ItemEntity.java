@@ -29,12 +29,21 @@ public class ItemEntity {
 	@JoinColumn(name = "id_category")
 	private CategoryEntity category;
 
-	public Item toModel() {
-		return new Item(id, description, price, category.toModel());
+	public Item toDomain() {
+		return new Item(
+			id,
+			description,
+			price,
+			category.toDomain()
+		);
 	}
-	
-	public Long getId() { return this.id; }
-	public String getDescription() { return this.description; }
-	public BigDecimal getPrice() { return this.price; }
-	public CategoryEntity getCategory() { return this.category; }
+
+	public static ItemEntity fromDomain(Item item) {
+		ItemEntity e = new ItemEntity();
+		e.id = item.getId();
+		e.description = item.getDescription();
+		e.price = item.getPrice();
+		e.category = CategoryEntity.fromDomain(item.getCategory());
+		return e;
+	}
 }

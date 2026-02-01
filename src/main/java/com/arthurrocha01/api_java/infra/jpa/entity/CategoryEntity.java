@@ -22,8 +22,15 @@ public class CategoryEntity {
     private String name;
     private String slug;
 
-    public Category toModel() {
+    public Category toDomain() {
         return new Category(id, name, slug);
+    }
+
+    public static CategoryEntity fromDomain(Category category) {
+        CategoryEntity e = new CategoryEntity();
+        e.id = category.getId();
+        e.name = category.getName();
+        return e;
     }
 
     public Long getId() { return this.id; }
