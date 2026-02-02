@@ -26,13 +26,13 @@ public class ItemService {
 		return this.repository.findAll(pageRequest);
 	}
 
-	public Item getItemById(Long id) {
-		return this.repository.findById(id);
+	public Item getItemById(String sku) {
+		return this.repository.findBySku(sku);
 	}
 
 	@Transactional
-	public Item updateItem(Long id, UpdateItemComand cmd) {
-		Item item = this.repository.findById(id);
+	public Item updateItem(String sku, UpdateItemComand cmd) {
+		Item item = this.repository.findBySku(sku);
 
 		item.changePrice(cmd.price());
 
@@ -40,8 +40,8 @@ public class ItemService {
 	}
 
 	@Transactional
-	public void patchItem(Long id, PatchItemCommand cmd) {
-		Item item = this.repository.findById(id);
+	public void patchItem(String sku, PatchItemCommand cmd) {
+		Item item = this.repository.findBySku(sku);
 
 		cmd.price().ifPresent(item::changePrice);
 

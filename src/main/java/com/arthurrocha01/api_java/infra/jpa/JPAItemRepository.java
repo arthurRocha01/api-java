@@ -25,9 +25,9 @@ public class JPAItemRepository implements ItemRepository{
 	}
 
 	@Override
-	public Item findById(Long id) {
-		Objects.requireNonNull(id, "O parâmetro id não pode ser nulo");
-		ItemEntity entity = this.jpa.findById(id).orElse(null);
+	public Item findBySku(String sku) {
+		Objects.requireNonNull(sku, "O parâmetro sku não pode ser nulo");
+		ItemEntity entity = this.jpa.findBySku(sku).orElse(null);
 		
 		if (entity == null) {
 			return null;

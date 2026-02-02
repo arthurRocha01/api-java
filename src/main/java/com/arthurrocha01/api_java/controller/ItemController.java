@@ -35,28 +35,28 @@ public class ItemController {
 		return ResponseEntity.ok(list);
 	}
 
-	@GetMapping("/{id}")
-	public ResponseEntity<Item> getItemById(@PathVariable Long id) {
+	@GetMapping("/{sku}")
+	public ResponseEntity<Item> getItemById(@PathVariable String sku) {
 		return ResponseEntity.ok(
-			this.service.getItemById(id)
+			this.service.getItemById(sku)
 		);
 	}
 
 	@PutMapping("/{id}")
 	public ResponseEntity<Item> update(
-		@PathVariable Long id,
+		@PathVariable String sku,
 		@RequestBody UpdateItemRequest request
 	) {
-		Item updatedItem = this.service.updateItem(id, request.toCommand());
+		Item updatedItem = this.service.updateItem(sku, request.toCommand());
 		return ResponseEntity.ok(updatedItem);
 	}
 
 	@PatchMapping("/{id}")
 	public ResponseEntity<Void> patch(
-		@PathVariable Long id,
+		@PathVariable String sku,
 		@RequestBody PatchItemRequest request
 	) {
-		this.service.patchItem(id, request.toCommand());
+		this.service.patchItem(sku, request.toCommand());
 		return ResponseEntity.noContent().build();
 	}
 }
