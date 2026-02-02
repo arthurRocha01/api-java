@@ -6,10 +6,11 @@ import com.arthurrocha01.api_java.application.command.UpdateItemComand;
 
 public record UpdateItemRequest(
     String description,
+    Integer quantity,
     BigDecimal price,
     Long categoryId
 ) {
     public UpdateItemComand toCommand() {
-        return new UpdateItemComand(description, price, categoryId);
+        return new UpdateItemComand(description, quantity, price, categoryId);
     }
 }

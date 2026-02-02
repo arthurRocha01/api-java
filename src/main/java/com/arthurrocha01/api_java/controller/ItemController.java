@@ -42,7 +42,7 @@ public class ItemController {
 		);
 	}
 
-	@PutMapping("/{id}")
+	@PutMapping("/{sku}")
 	public ResponseEntity<Item> update(
 		@PathVariable String sku,
 		@RequestBody UpdateItemRequest request
@@ -51,7 +51,7 @@ public class ItemController {
 		return ResponseEntity.ok(updatedItem);
 	}
 
-	@PatchMapping("/{id}")
+	@PatchMapping("/{sku}")
 	public ResponseEntity<Void> patch(
 		@PathVariable String sku,
 		@RequestBody PatchItemRequest request

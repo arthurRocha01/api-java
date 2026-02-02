@@ -27,7 +27,13 @@ public class ItemEntity {
 	@Column(name = "sku", unique = true, nullable = false)
 	private String sku;
 
+	@Column(name = "quantity", nullable = false)
+	private Integer quantity;
+
+	@Column(name = "description", nullable = false)
 	private String description;
+
+	@Column(name = "price", nullable = false)
 	private BigDecimal price;
 
 	@ManyToOne(fetch = FetchType.LAZY)
@@ -39,6 +45,7 @@ public class ItemEntity {
 			id,
 			sku,
 			description,
+			quantity,
 			price,
 			category.toDomain()
 		);
@@ -49,6 +56,7 @@ public class ItemEntity {
 		e.id = item.getId();
 		e.sku = item.getSku();
 		e.description = item.getDescription();
+		e.quantity = item.getQuantity();
 		e.price = item.getPrice();
 		e.category = CategoryEntity.fromDomain(item.getCategory());
 		return e;

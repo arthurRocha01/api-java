@@ -4,12 +4,17 @@ import java.math.BigDecimal;
 
 public record UpdateItemComand (
     String description,
+    Integer quantity,
     BigDecimal price,
     Long categoryId
 ) {
     public UpdateItemComand {
         if (description == null || description.isBlank()) {
             throw new IllegalArgumentException("Descrição não pode ser vazia");
+        }
+
+        if (quantity == null) {
+            throw new IllegalArgumentException("Quantity não pode ser nulo");
         }
 
         if (price == null) {

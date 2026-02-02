@@ -6,6 +6,7 @@ import java.util.Optional;
 public record PatchItemCommand(
     Long itemId,
     Optional<String> description,
+    Optional<Integer> quantity,
     Optional<BigDecimal> price,
     Optional<Long> categoryId
 ) {}

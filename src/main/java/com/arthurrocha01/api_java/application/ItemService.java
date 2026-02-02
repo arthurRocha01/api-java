@@ -35,6 +35,7 @@ public class ItemService {
 		Item item = this.repository.findBySku(sku);
 
 		item.changePrice(cmd.price());
+		item.changeQuantity(cmd.quantity());
 
 		return this.repository.save(item);
 	}
@@ -44,6 +45,7 @@ public class ItemService {
 		Item item = this.repository.findBySku(sku);
 
 		cmd.price().ifPresent(item::changePrice);
+		cmd.quantity().ifPresent(item::changeQuantity);
 
 		this.repository.save(item);
 	}
